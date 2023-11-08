@@ -29,6 +29,15 @@ CREATE TABLE appointments (
     FOREIGN KEY (animalid) REFERENCES animals(animalid)
 );
 
+CREATE TABLE invoices (
+    invoiceid SERIAL PRIMARY KEY,
+    appointed INT,
+    totalamount NUMERIC(10, 2),
+    paymentdate DATE,
+    FOREIGN KEY (appointed) REFERENCES appointments(appointed)
+);
+
+
 CREATE TABLE doctors (
     doctorid SERIAL PRIMARY KEY,
     dfirstname VARCHAR(50),
