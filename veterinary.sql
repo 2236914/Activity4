@@ -1,7 +1,7 @@
 CREATE DATABASE veterinary;
 
 CREATE TABLE owners (
-    PK SERIAL PRIMARY KEY,
+    ownerid SERIAL PRIMARY KEY,
     ofirstname VARCHAR(50),
     olastname VARCHAR(50),
     address VARCHAR(100),
@@ -22,7 +22,7 @@ CREATE TABLE animals (
 );
 
 CREATE TABLE appointments (
-    appointed SERIAL PRIMARY KEY,
+    appointeid SERIAL PRIMARY KEY,
     animalid INT,
     appointdate DATE,
     reason VARCHAR(255),
@@ -47,7 +47,7 @@ CREATE TABLE invoices (
 );
 
 CREATE TABLE medicalrecords (
-    recorded SERIAL PRIMARY KEY,
+    recordid SERIAL PRIMARY KEY,
     animalid INT,
     recorddate TIMESTAMP,
     doctorid INT,
@@ -118,3 +118,4 @@ VALUES
 ('8', '8', '150.00', '16:30:00'),
 ('9', '9', '60.00', '14:45:00'),
 ('10', '10', '40.00', '11:30:00');
+ ALTER TABLE owners ADD COLUMN registereddate DATE;
