@@ -1,7 +1,7 @@
 CREATE DATABASE veterinary;
 
 CREATE TABLE owners (
-    PK SERIAL PRIMARY KEY,
+    ownerid SERIAL PRIMARY KEY,
     ofirstname VARCHAR(50),
     olastname VARCHAR(50),
     address VARCHAR(100),
@@ -117,4 +117,9 @@ VALUES
 ('7', '7', '75.00', '09:15:00'),
 ('8', '8', '150.00', '16:30:00'),
 ('9', '9', '60.00', '14:45:00'),
+<<<<<<< HEAD
 ('10', '10', '40.00', '11:30:00');
+=======
+('10', '10', '40.00', '11:30:00');
+
+>>>>>>> feat/create-table-owners
