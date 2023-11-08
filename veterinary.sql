@@ -29,6 +29,15 @@ CREATE TABLE appointments (
     FOREIGN KEY (animalid) REFERENCES animals(animalid)
 );
 
+CREATE TABLE doctors (
+    doctorid SERIAL PRIMARY KEY,
+    dfirstname VARCHAR(50),
+    dlastname VARCHAR(50),
+    specialty VARCHAR(100),
+    phone VARCHAR(15),
+    email VARCHAR(100)
+);
+
 CREATE TABLE invoices (
     invoiceid SERIAL PRIMARY KEY,
     appointed INT,
@@ -37,12 +46,14 @@ CREATE TABLE invoices (
     FOREIGN KEY (appointed) REFERENCES appointments(appointed)
 );
 
-
-CREATE TABLE doctors (
-    doctorid SERIAL PRIMARY KEY,
-    dfirstname VARCHAR(50),
-    dlastname VARCHAR(50),
-    specialty VARCHAR(100),
-    phone VARCHAR(15),
-    email VARCHAR(100)
+CREATE TABLE medicalrecords (
+    recorded SERIAL PRIMARY KEY,
+    animalid INT,
+    recorddate TIMESTAMP,
+    doctorid INT,
+    diagnosis TEXT,
+    prescription TEXT,
+    notes TEXT,
+    FOREIGN KEY (animalid) REFERENCES animals(animalid),
+    FOREIGN KEY (doctorid) REFERENCES doctors(doctorid)
 );
