@@ -120,3 +120,5 @@ VALUES
 ('10', '10', '40.00', '11:30:00');
 
  ALTER TABLE owners ADD COLUMN registereddate DATE;
+   ALTER TABLE invoices
+    RENAME COLUMN paymentdate TO paymenttime;
